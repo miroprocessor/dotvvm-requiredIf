@@ -1,0 +1,25 @@
+﻿@viewModel dotvvm.validation.ViewModels.DefaultViewModel, dotvvm.validation
+@masterPage Views/MasterPage.dotmaster
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <h1>{{value: Title}}</h1>
+    <dot:Literal class="control-label col-md-3" Text="Name">
+    </dot:Literal>
+    <dot:TextBox Text="{value: Name}" class="form-control" Type="Normal"></dot:TextBox>
+    <dot:Validator HideWhenValid="true" Value="{value: Name}" ShowErrorMessageText="true"></dot:Validator>
+    <br />
+    <br />
+    <dot:Literal class="control-label col-md-3" Text="Gender">
+    </dot:Literal>
+    <dot:RadioButton CheckedItem="{value: Gender}" CheckedValue="{value: "1"}" Text="Male"></dot:RadioButton>
+    <dot:RadioButton CheckedItem="{value: Gender}" CheckedValue="{value: "2"}" Text="Female"></dot:RadioButton>
+    <br />
+    <br />
+    <dot:Literal class="control-label col-md-3" Text="Age">
+    </dot:Literal>
+    <dot:TextBox Text="{value: Age}" class="form-control" Type="Number"></dot:TextBox>
+    <dot:Validator HideWhenValid="true" Value="{value: Age}" ShowErrorMessageText="true"></dot:Validator>
+    <br />
+    <br />
+    <dot:Button Click="{command: Save()}" Text="Save" class="btn btn-outline-secondary btn-sm"></dot:Button>
+</dot:Content>
